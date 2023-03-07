@@ -48,6 +48,8 @@ impl FileSystem {
     pub fn from_root(root: PathBuf) -> Self {
         let source = root.join(SRC);
         let project = Project::new();
+        info!("Creating directory");
+        info!(source);
 
         fs::create_dir(&source).ok(); // It'll error later if it matters
 
